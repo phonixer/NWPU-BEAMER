@@ -1,4 +1,4 @@
-# NWPUBeamer LaTex ppt npu
+# NWPUBeamer LaTex ppt npu 西北工业大学ppt模板
 西北工业大学主题的Beamer模版  ppt
 
 基于清华大学和东南大学的BEAMER-ppt模板创建了该模板
