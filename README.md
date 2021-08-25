@@ -1,0 +1,4 @@
+# NWPUBeamer
+西北工业大学主题的Beamer模版
+
+基于清华大学和东南大学的BEAMER模板创建了该模板
