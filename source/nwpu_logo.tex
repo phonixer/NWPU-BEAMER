@@ -1,0 +1,40 @@
+
+\definecolor{npu-blue}{RGB}{35, 104, 177}
+\definecolor{npu-blue-gray}{RGB}{229, 237, 246}
+
+\setCJKfamilyfont{nwpulogo}{nwpulogo.ttf}     	% 含"西北工业大学"logo字体 
+\newcommand{\nwpulogo}{\CJKfamily{nwpulogo}}
+\begin{tikzpicture}
+  \draw[npu-blue][line width=0.1cm] (0,0) circle (2cm);
+  \draw[npu-blue][line width=0.05cm] (0,0) circle (1.3cm);
+  \fill[npu-blue-gray] (0,0) circle (1.3cm);
+  \fill[white] (0,0) circle (0.9cm);
+  \draw[npu-blue][line width=0.05cm] (0,0) circle (0.9cm);
+  \fill[npu-blue] (-0.5,-0.73) .. controls (-0.35,-0.81) ..
+	(-0.2,-0.8)  .. controls (0.15, -0.7) and (0.20,-0.60) .. 
+	(0.35,-0.35)   .. controls (0.42, -0.24) and (0.6,-0.26) ..
+	(0.6,-0.4)   .. controls (0.58,-0.50) and (0.49, -0.50) ..
+	(0.45,-0.45) .. controls (0.4,-0.68) and (0.75, -0.7) ..
+	(0.9,0) arc (360:250:0.9cm);
+  \fill[npu-blue] (-0.4,-0.4)--(-1.33,-0.4)--(1,1.1)--cycle;
+  \fill[npu-blue] (-0.37,-0.43)--(-0.2,-0.8)--(1.01,1.05)--cycle;
+  
+  \foreach \x/\txt in {0/N,1/O,2/R,3/T,4/H,5/W,6/E,7/S,8/T,9/E,10/R,11/N,12/~,13/P,14/O,15/L,16/Y,17/T,18/E,19/C,20/H,21/N,22/I,23/C,24/A,25/L,26/~,27/U,28/N,29/I,30/V,31/E,32/R,33/S,34/I,35/T,36/Y}
+  {
+    \node[npu-blue][scale=0.7,rotate=\x*-6.5-245] at (207+\x*-6.5:1.6cm) {\txt};
+  };
+  \foreach \x/\txt in {0/西,1/北,2/工,3/业,4/大,5/学}
+  {
+    \node[npu-blue][scale=1.25,rotate=\x*18-50] at (225+\x*18:1.65cm) {\nwpulogo\txt};
+  };
+  \foreach \x/\txt in {0/1,1/9,2/3,3/8}
+  {
+    \node[npu-blue][scale=1,rotate=\x*18-25] at (\x*18-115:1.1cm) {\bfseries\txt};
+  };
+
+  % \node[npu-blue][scale=8]at (12.5,0.5){\nwpulogo 西北工业大学};
+  
+  % \node[npu-blue][scale=1.8]at (12.5,-1.5){NORTHWESTERN POLYTECHNICAL UNIVERSITY};
+\end{tikzpicture}
+
+

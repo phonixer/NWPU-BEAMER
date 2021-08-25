@@ -1,0 +1,122 @@
+%This version is modified by [tanglei](http://www.tanglei.name)
+%The origin is from http://far.tooold.cn/post/latex/beamertsinghua
+\mode<presentation>
+
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+%\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+%\usecolortheme{rose}
+%\useinnertheme[shadow]{rounded}
+%\usecolortheme{dolphin}
+%\useoutertheme{infolines}
+% Background
+\pgfdeclareimage[width=\paperwidth,height=\paperheight]{bg}{source/nwpu_background.png}
+\setbeamertemplate{background}{\pgfuseimage{bg}}
+
+
+
+
+\useoutertheme[footline=authorinstitutetitle]{miniframes}
+\makeatletter % [add curpage/total page at the bottom](http://tex.stackexchange.com/questions/100838/beamer-dresden-theme-miniframes-appeareance-and-frame-number-insertion)
+\newcommand{\frameofframes}{/}
+\newcommand{\setframeofframes}[1]{\renewcommand{\frameofframes}{#1}}
+\setbeamertemplate{footline} 
+  {%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.25\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortdate
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.435\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+   \begin{beamercolorbox}[wd=0.065\paperwidth,ht=2.25ex,dp=1ex,right]{title in head/foot}%
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+  }
+
+  \setbeamertemplate{headline}{%
+  \leavevmode%
+  \@tempdimb=6.4375ex%
+    %\multiply\@tempdimb by\beamer@sectionmax%
+    \pgfdeclareimage[height=.85\@tempdimb]{logo}{source/nwpu_logo.png}%
+    \pgfdeclareimage[height=1\@tempdimb]{title_logo}{source/nwpu_title.png}%
+  \logo{\pgfuseimage{logo}}%
+  \ifdim\@tempdimb>0pt%
+    \advance\@tempdimb by 1.125ex%
+    \begin{beamercolorbox}[wd=.735\paperwidth,ht=\@tempdimb]{section in head/foot}%
+      \vbox to\@tempdimb{\vfil\insertsectionnavigationhorizontal{.5\textwidth}{\hskip0pt plus1filll}{}\vfil}%
+    \end{beamercolorbox}%
+    %% \begin{beamercolorbox}[wd=.4\paperwidth,ht=\@tempdimb,center]{subsection in head/foot}%
+    %%   \vbox to\@tempdimb{\vfil\textbf{\footnotesize\insertshortinstitute~~}\vfil}%
+    %% \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.2\paperwidth,ht=\@tempdimb,center]{h1}%
+      \vbox to\@tempdimb{\vfil\pgfuseimage{title_logo}\vfil}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.065\paperwidth,ht=\@tempdimb,center]{h1}%
+      \vbox to\@tempdimb{\vfil\insertlogo\vfil\vfil}%
+    \end{beamercolorbox}%
+  \fi%
+}
+
+\makeatother
+
+\useinnertheme{rectangles}
+\usecolortheme{whale}
+\usecolortheme{orchid}
+
+%\useoutertheme{default}
+%\useinnertheme[shadow=true]{rounded}
+
+%definecolor{npu-blue}{RGB}{35, 104, 177}
+\xdefinecolor{npu-blue-gray}{RGB}{229, 237, 246}
+\setbeamercolor{h1}{fg=black,bg=npu-blue-gray}
+
+\xdefinecolor{npu-blue}{RGB}{35, 104, 177}  %RGB#82318E
+\setbeamercolor{frametitle}{bg=npu-blue,fg=white}
+\setbeamercolor{title}{fg=white,bg=npu-blue}
+\setbeamerfont{frametitle}{size=\large}
+\setbeamertemplate{navigation symbols}{}
+
+%% try
+\setbeamercolor{block title}{bg=npu-blue}
+\setbeamercolor{block title example}{use={normal text,example text},fg=example text.fg!75!normal text.fg,bg=npu-blue text.bg!75!black}
+\setbeamercolor{fine separation line}{}
+\setbeamercolor{item projected}{fg=black,bg=npu-blue-gray }
+\setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
+\setbeamercolor{palette sidebar quaternary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar tertiary}{use=normal text,fg=normal text.fg}
+\setbeamercolor{section in sidebar}{fg=brown}
+\setbeamercolor{section in sidebar shaded}{fg= grey}
+\setbeamercolor{separation line}{}
+\setbeamercolor{sidebar}{bg=npu-blue}
+\setbeamercolor{sidebar}{parent=palette primary}
+\setbeamercolor{structure}{fg=npu-blue}
+\setbeamercolor{subsection in sidebar}{fg=brown}
+\setbeamercolor{subsection in sidebar shaded}{fg=grey}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\setbeamerfont{block title}{size={}}
+
+
+%\usesubitemizeitemtemplate{%
+    %\tiny\raise1.0pt\hbox{\color{beamerstructure}$\blacktriangleright$}%
+%}
+%\usesubsubitemizeitemtemplate{%
+    %\tiny\raise1.0pt\hbox{\color{beamerstructure}$\bigstar$}%
+%}
+
+%\setbeamersize{text margin left=1em,text margin right=1em}
+
+%\ifbeamer@secheader\else\setbeamertemplate{headline}[default]\fi
+
+\mode
+<all>
